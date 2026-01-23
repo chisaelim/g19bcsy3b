@@ -20,11 +20,11 @@
                             Auth
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/g19bcsy3b/pages/login.php">Login</a></li>
+                            <li><a class="dropdown-item" href="/g19bcsy3b/?page=login">Login</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/g19bcsy3b/pages/register.php">Register</a></li>
+                            <li><a class="dropdown-item" href="/g19bcsy3b/?page=register">Register</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
