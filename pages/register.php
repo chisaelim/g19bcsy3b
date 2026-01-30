@@ -2,8 +2,8 @@
 $username = $passwd = $name = '';
 $usernameErr = $passwdErr = $nameErr = '';
 if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmPasswd'])) {
-    $name = $_POST['name'];
-    $username = $_POST['username'];
+    $name = trim($_POST['name']);
+    $username = trim($_POST['username']);
     $passwd = $_POST['passwd'];
     $confirmPasswd = $_POST['confirmPasswd'];
     if (empty($name)) {
@@ -18,7 +18,20 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmP
     if ($passwd !== $confirmPasswd) {
         $passwdErr = 'password does not match!';
     }
+    if (usernameExists($username)) {
+        $usernameErr = 'username exist!';
+    }
     if (empty($nameErr) && empty($usernameErr) && empty($passwdErr)) {
+        if (registerUser($name, $username, $passwd)) {
+            $username = $passwd = $name = '';
+            echo '<div class="alert alert-success" role="alert">
+                    Register success. <a href="./?page=login">Login</a>
+                </div>';
+        } else {
+            echo '<div class="alert alert-danger" role="alert">
+                try aggain.
+                </div>';
+        }
     }
 }
 ?>
@@ -27,7 +40,7 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmP
     <h3>register</h3>
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input name="name" type="text" class="form-control 
+        <input name="name" value="<?php echo $name ?>" type="text" class="form-control 
         <?php echo empty($nameErr) ? '' : 'is-invalid' ?>">
         <div class="invalid-feedback">
             <?php echo $nameErr ?>
@@ -35,7 +48,7 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmP
     </div>
     <div class="mb-3">
         <label class="form-label">Username</label>
-        <input name="username" type="text" class="form-control 
+        <input name="username" value="<?php echo $username ?>" type="text" class="form-control 
         <?php echo empty($usernameErr) ? '' : 'is-invalid' ?>">
         <div class="invalid-feedback">
             <?php echo $usernameErr ?>

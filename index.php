@@ -1,10 +1,10 @@
 <?php
 require_once('./init/init.php');
+$user = loggedInUser();
 include './includes/header.inc.php';
 include './includes/navbar.inc.php';
-$user = loggedInUser();
-// unset($_SESSION['user_id']); // logout
-$avialable_pages = ['login', 'register', 'dashboard'];
+
+$avialable_pages = ['login', 'register', 'logout', 'dashboard'];
 $logged_in_pages = ['dashboard'];
 $non_logged_in_pages = ['login', 'register'];
 $page = '';
