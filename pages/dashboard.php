@@ -3,7 +3,6 @@
         echo 'ID:' . $_SESSION['user_id'];
         echo 'ADMIN' . isAdmin();
     }
-
 ?>
 
 
