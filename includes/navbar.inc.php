@@ -23,26 +23,26 @@
                         <?php if (!$user) { ?>
                             <li>
                                 <a class="dropdown-item"
-                                    href="/g19bcsy3b/?page=login">Login</a>
+                                    href="<?php echo $baseUrl ?>?page=login">Login</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
                                 <a class="dropdown-item"
-                                    href="/g19bcsy3b/?page=register">Register</a>
+                                    href="<?php echo $baseUrl ?>?page=register">Register</a>
                             </li>
                         <?php } else { ?>
                             <li>
                                 <a class="dropdown-item"
-                                    href="/g19bcsy3b/?page=profile">Profile</a>
+                                    href="<?php echo $baseUrl ?>?page=profile">Profile</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
                                 <a class="dropdown-item"
-                                    href="/g19bcsy3b/?page=logout">Logout</a>
+                                    href="<?php echo $baseUrl ?>?page=logout">Logout</a>
                             </li>
                         <?php } ?>
                     </ul>
