@@ -66,7 +66,7 @@ function registerUser($name, $username, $passwd)
 function isAdmin()
 {
     $user = loggedInUser();
-    return $user && $user->level === 'ADMIN';
+    return $user && $user->level === 'admin';
 }
 
 function isUserHasPassword($passwd)
