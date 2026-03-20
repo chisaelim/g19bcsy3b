@@ -25,8 +25,8 @@
                     <td><img src='" . ($row->photo ?? './assets/images/emptyuser.png') . "'></td>
                     <td>$row->name</td>
                     <td>
-                        <a class='btn btn-primary btn-sm'>Edit</a>
-                        <a class='btn btn-danger btn-sm'>Delete</a>
+                        <a href='./?page=user/update&id=$row->id' class='btn btn-primary btn-sm'>Edit</a>
+                        <a href='./?page=user/delete&id=$row->id' class='btn btn-danger btn-sm'>Delete</a>
                     </td>
                 </tr>";
                 $count++;
